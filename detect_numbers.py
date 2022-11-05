@@ -24,10 +24,12 @@ def main():
     x_test = x_test.astype('float32')/255
     
     y_train = to_categorical(train_labels)
-    y_test = to_categorical(test_labels)
+    # y_test = to_categorical(test_labels)
     
     print(train_labels[0])
     print(y_train[0])
+    
+    model.fit(x_train, y_train, epochs=5, batch_size=128)
     
 
 if __name__ == '__main__':
